@@ -1,0 +1,11 @@
+body {font-family:Tahoma,sans-serif;font-size:14px;}
+
+.taggable .highlight,
+.taggable .input{width:400px;line-height:1.4em;height:2.8em;position:absolute;left:200px;top:20em;padding:0.5em;outline:none;}
+
+.taggable .input {opacity:1;background:none;background:transparent;}
+.taggable .highlight {background:rgba(0,0,0,0.05);color:rgba(0,0,0,0.05);}
+.taggable .highlight span {background:rgba(0,0,0,0.1);color:rgba(0,0,0,0.1);}
+
+.autocomplete {position:absolute;left:200px;top:22.8em;background:rgba(0,0,0,0.02);width:400px;padding:0.5em;list-style:none;}
+.autocomplete li {line-height:1.4em;margin:0 -0.5em;padding:0 0.5em;}
