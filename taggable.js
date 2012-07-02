@@ -59,8 +59,7 @@ Taggable.prototype = {
           textLen = text.length;
       text = text.slice(0,this.currentTag.s) + '#' + word + text.slice(this.currentTag.e - 1, textLen);
       $(this.element).html(text);
-      this.refreshTags();
-      this.highlight();
+      this.refresh();
     }
   },
 
@@ -68,14 +67,32 @@ Taggable.prototype = {
     var cursor, 
         currentTag;
 
-    this.refreshTags();
+    this.refresh();
     cursor = Utils.getCaretPosition(this.element);
-    this.highlight();
     this.currentTag = this.isInTag(cursor);
     if(this.currentTag){
       //console.log('Current tag', this.currentTag.t);
     }
     
+  },
+
+  refresh : function(){
+    this.splitLines();
+    this.refreshTags();
+    this.highlight();
+  },
+
+  splitLines : function(){
+    var element = $(this.element),
+        lines = element.children('div'),
+        html;
+    if(lines.length > 0){
+      html = $(this.element).html();
+      html = html.replace(/<div>/, '');
+      html = html.replace(/<\/div>/, '</br>');
+      //element.html( html );
+    }
+
   },
 
   refreshTags : function(){
