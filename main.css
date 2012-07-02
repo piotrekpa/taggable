@@ -1,7 +1,9 @@
 body {font-family:Tahoma,sans-serif;font-size:14px;}
 
+.taggable {position:absolute;left:200px;top:200px;}
+
 .taggable .highlight,
-.taggable .input{width:400px;line-height:1.4em;height:2.8em;position:absolute;left:200px;top:20em;padding:0.5em;outline:none;}
+.taggable .input{font-size:1em;font-family:Tahoma,Arial,Verdana,sans-serif;letter-spacing:0;word-spacing:normal;border:none;width:400px;line-height:1.4em;height:2.8em;position:absolute;left:0px;top:0px;padding:0.5em;outline:none;}
 
 .taggable .input {opacity:1;background:none;background:transparent;}
 .taggable .highlight {background:rgba(0,0,0,0.05);color:rgba(0,0,0,0.05);}
