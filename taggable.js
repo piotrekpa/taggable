@@ -64,7 +64,7 @@ var Taggable = function(element){
   this.autocomplete = new Autocomplete($('#autocomplete'), autocompleteCallbackProxy.bind(this));
 
   $(this.element).keyup(this.keyUpHandler.bind(this));
-  console.log(this);
+
 };
 
 
@@ -86,7 +86,6 @@ Taggable.prototype = {
 
     this.refresh();
     cursor = Utils.getCaretPosition(this.element);
-    console.log(cursor);
     this.currentTag = this.isInTag(cursor);
     if(this.currentTag){
       //console.log('Current tag', this.currentTag.t);
@@ -95,7 +94,6 @@ Taggable.prototype = {
   },
 
   refresh : function(){
-    //this.splitLines();
     this.getHtml();
     this.splitLines();
     this.refreshTags();
@@ -126,7 +124,6 @@ Taggable.prototype = {
       
     }while(hit != null)
     
-    console.log(hits);
     this.tagsRef = hits;
     this.REG_tag.lastIndex = 0;
   },
@@ -154,12 +151,9 @@ Taggable.prototype = {
         tag, 
         from = 0;
 
-    
-
     for(i = max; i > 0; i--){
       var tag = tags[i-1],
           htmlLen = html.length;
-      console.log('SLICE', html.slice(0, tag.s));
       html = html.slice(0, tag.s) + '<span>' + tag.t + '</span>' + html.slice(tag.e-1, htmlLen);
     }
 
